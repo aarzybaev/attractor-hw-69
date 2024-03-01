@@ -2,7 +2,7 @@ import {useNavigate, useParams} from 'react-router-dom';
 import {useCallback, useEffect} from 'react';
 import {useAppDispatch, useAppSelector} from '../../app/hooks';
 import {selectFetchOneLoading, selectOneSerial} from '../../store/serialSlice';
-import {fetchOne} from '../../store/serialThunks';
+import {fetchOne, fetchSerials} from '../../store/serialThunks';
 import Spinner from '../../components/Spinner/Spinner';
 
 const Show = () => {
@@ -15,6 +15,7 @@ const Show = () => {
   const fetchOneSerial = useCallback(async () => {
     try {
       await dispatch(fetchOne(id || '')).unwrap();
+      await dispatch(fetchSerials(''));
     } catch (e) {
       navigate("/");
     }
@@ -30,7 +31,7 @@ const Show = () => {
     detailedArea = (
       <div className="col-5 m-auto mt-5 d-flex gap-3">
         <div>
-          <img src={!oneSerial.image? noImage : oneSerial.image.medium} className="card-img-top" style={{width: '150px'}} alt="img"/>
+          <img src={!oneSerial.image ? noImage : oneSerial.image.medium} className="card-img-top" style={{width: '150px'}} alt="img"/>
         </div>
         <div className="card-body">
           <h5 className="card-title">{oneSerial.name}</h5>
