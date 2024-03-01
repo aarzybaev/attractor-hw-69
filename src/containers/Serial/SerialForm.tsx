@@ -37,7 +37,7 @@ const SerialForm = () => {
     <div className="col-8 m-auto">
       <form className="row">
         <div className="mt-3 row position-relative">
-          <label htmlFor="showTitle" className="col-3 col-form-label">Search for TV Show</label>
+          <label htmlFor="showTitle" className="col-auto col-form-label text-end">Search for TV Show</label>
           <div className="col-9">
             <input
               type="text"
