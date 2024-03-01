@@ -17,7 +17,7 @@ const Show = () => {
       await dispatch(fetchOne(id || '')).unwrap();
       await dispatch(fetchSerials(''));
     } catch (e) {
-      navigate("/");
+      navigate("/notFoundPage");
     }
   }, [dispatch, id, navigate]);
   useEffect(() => {
