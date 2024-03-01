@@ -2,10 +2,7 @@ import {Route, Routes} from 'react-router-dom';
 import Layout from './components/Layout/Layout';
 import Show from './containers/Show/Show';
 
-
-
 const App = () => {
-
   return (
     <>
       <Layout>

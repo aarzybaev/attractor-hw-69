@@ -31,7 +31,11 @@ const Show = () => {
     detailedArea = (
       <div className="col-5 m-auto mt-5 d-flex gap-3">
         <div>
-          <img src={!oneSerial.image ? noImage : oneSerial.image.medium} className="card-img-top" style={{width: '150px'}} alt="img"/>
+          <img
+            src={!oneSerial.image ? noImage : oneSerial.image.medium}
+            className="card-img-top"
+            style={{width: '150px'}}
+            alt={oneSerial.name}/>
         </div>
         <div className="card-body">
           <h5 className="card-title">{oneSerial.name}</h5>
