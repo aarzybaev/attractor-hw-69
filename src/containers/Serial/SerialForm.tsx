@@ -26,7 +26,7 @@ const SerialForm = () => {
       <ul className="list-group mt-1 position-absolute col-8">
         {serials.map(item => (
           <li key={item.show.id} className="list-group-item list-group-item-action">
-            <NavLink to={'/shows/' + item.show.id}>{item.show.name}</NavLink>
+            <NavLink to={'/shows/' + item.show.id} onClick={() => setShowTitle(item.show.name)}>{item.show.name}</NavLink>
           </li>
         ))}
       </ul>
